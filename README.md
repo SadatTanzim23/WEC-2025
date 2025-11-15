@@ -1,30 +1,7 @@
 # WEC-2025
 CR themed trading in 1450
 
-1.Manage Multiple Villages
-2. Each village should have unique characteristics and quantities of key
-resources (e.g., one may produce grain abundantly while another has
-surplus iron).
-3.Optimize Trade and Transport
-4. Implement a mechanism to trade or transport resources between villages
-to balance shortages and surpluses. Efficiency in routes, transport time,
-and resource conversion is key.
-5.Adapt to Random Events
-6. The system must respond dynamically to unforeseen occurrences such as
-droughts, plagues, trade route closures, population booms, or resource
-depletion.
-7.Display Simulation Results
-8. Present a clear output — either text-based or graphical — showing how
-resources flow, how decisions are made, and the resulting state of the
-kingdom over time.
-
-Teams that incorporate the following features into their solution will be
-eligible for additional marks:
-Visual Dashboard: A live or periodic graphical interface showing resource levels, trade routes, or village status in real-time.
-Sustainability Scoring: Introduce an environmental or ethical metric rewarding balanced resource use and long-term prosperity over shortterm profit
-Historical Realism: Include medieval-themed mechanics such as labor limits, taxation, weather cycles, or guild systems for added immersion.
-
-I want to create a GUI that has multiple features:
+The GUI that has multiple features:
 1) A map of all the villages in our kingdom (Thinking about 5-11). Each city is connected to adjacent cities through trade routes. We have a total of 5 resources in our kingdom. The resources are iron, wood, livetsock and grain, and additionally, we have gold as a currency, which is produced by every city. Each city should produce gold as well as 1 other resource, and the rate of production depends on the current population of the city.
 
 2) Every city has a pool of the 5 resources and a threshold for each resource depending on its populatio (behind the scenes, there is the idea that each city needs a minimum resource value to operate (like an initial value or the constant term of a function) + resource per person (the linear value depending on the number on the population value)). If the resource value drops below the threshold for any resource in that city, the growth rate of the that city goes into the negatives. If its higher for all, it will increase. How much higher or lower it is will determine the negative or positive growth rate. We need to create an algorithm that archives this. One feature of the algorithm is that if the resource drops below the minimum survival rate for the city, which is the constant term in the linear function, the city is effectively dead and removed from the map. Every city also consumes resources based on their population.
